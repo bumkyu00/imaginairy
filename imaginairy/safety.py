@@ -27,7 +27,8 @@ class SafetyResult:
 
     def add_special_care_score(self, concept_idx, abs_score, threshold):
         adjustment = self._default_adjustment
-        adjusted_score = round(abs_score - threshold + adjustment, 3)
+        #adjusted_score = round(abs_score - threshold + adjustment, 3)
+        adjusted_score = 0
         try:
             score_name = _SPECIAL_CARE_DESCRIPTIONS[concept_idx]
         except LookupError:
@@ -44,7 +45,8 @@ class SafetyResult:
         adjustment = self._default_adjustment
         if self.special_care_score > 0:
             adjustment += 0.01
-        adjusted_score = round(abs_score - threshold + adjustment, 3)
+        #adjusted_score = round(abs_score - threshold + adjustment, 3)
+        adjusted_score = 0
         try:
             score_name = _CONCEPT_DESCRIPTIONS[concept_idx]
         except LookupError:
